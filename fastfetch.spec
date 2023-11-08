@@ -1,43 +1,32 @@
 Name:           fastfetch
-Version:        2.2.1
-Release:        1%{?dist}
+Version:        2.2.3
+Release:        1
 Summary:        Like neofetch, but much faster because written in c
- 
+Group:          Shells
 License:        MIT
 URL:            https://github.com/fastfetch-cli/fastfetch
-Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/fastfetch-cli/fastfetch/archive/%{version}/%{name}-%{version}.tar.gz
  
 BuildRequires:  cmake
-BuildRequires:  gcc
-BuildRequires:  gcc-c++
-BuildRequires:  pciutils-devel
-BuildRequires:  wayland-devel
-BuildRequires:  libxcb-devel
-BuildRequires:  libXrandr-devel
-BuildRequires:  dconf-devel
-BuildRequires:  dbus-devel
-BuildRequires:  sqlite-devel
-BuildRequires:  ImageMagick-devel
-BuildRequires:  zlib-devel
-BuildRequires:  libglvnd-devel
-BuildRequires:  mesa-libOSMesa-devel
-BuildRequires:  xfconf-devel
-BuildRequires:  glib2-devel
-BuildRequires:  ocl-icd-devel
-BuildRequires:  rpm-devel
-# not available on s390x
-%if "%{_arch}" != "s390x"
-BuildRequires:  libddcutil-devel
-%endif
-# vulkan-loader not available in el8 on some arches
-%if 0%{?rhel} == 8
-  %if "%{_arch}" != "s390x" && "%{_arch}" != "ppc64le"
-BuildRequires:  vulkan-loader-devel
-  %endif
-%else
-BuildRequires:  vulkan-loader-devel
-%endif
-BuildRequires:  chafa-devel
+BuildRequires:  pkgconfig(libpci)
+BuildRequires:  pkgconfig(wayland-client)
+BuildRequires:  pkgconfig(xcb)
+BuildRequires:  pkgconfig(xrandr)
+BuildRequires:  pkgconfig(dconf)
+BuildRequires:  pkgconfig(dbus-1)
+BuildRequires:  pkgconfig(sqlite3)
+BuildRequires:  pkgconfig(ImageMagick)
+BuildRequires:  pkgconfig(zlib)
+BuildRequires:  pkgconfig(libglvnd)
+BuildRequires:  pkgconfig(osmesa)
+# In contrib repo, so lets disable it for now
+#BuildRequires:  pkgconfig(libxfconf-0)
+BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(ocl-icd)
+BuildRequires:  pkgconfig(rpm)
+#BuildRequires:  pkgconfig(ddcutil)
+BuildRequires:  pkgconfig(vulkan)
+#BuildRequires:  pkgconfig(chafa)
  
 Recommends:     pciutils
 Recommends:     libxcb
@@ -75,14 +64,11 @@ BuildArch: noarch
  
  
 %build
-%cmake -D BUILD_TESTS=ON
-%cmake_build
- 
-%check
-%ctest
- 
+%cmake
+%make_build
+
 %install
-%cmake_install
+%make_install -C build
  
 %files
 %license LICENSE
