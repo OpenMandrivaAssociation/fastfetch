@@ -29,15 +29,15 @@ BuildRequires:  pkgconfig(vulkan)
 #BuildRequires:  pkgconfig(chafa)
  
 Recommends:     pciutils
-Recommends:     libxcb
-Recommends:     libXrandr
+Recommends:     %{_lib}xcb1
+Recommends:     lib64xrandr2
 Recommends:     dconf
-Recommends:     sqlite
-Recommends:     zlib
-Recommends:     libglvnd-glx
-Recommends:     ImageMagick
+Recommends:     sqlite-tools
+Recommends:     lib64z1
+Recommends:     lib64GLX0
+Recommends:     imagemagick
 Recommends:     glib2
-Recommends:     ocl-icd
+Recommends:     lib64opencl1
 Recommends:     chafa
 Recommends:     ddcutil
  
@@ -46,7 +46,6 @@ fastfetch is a neofetch-like tool for fetching system information and
 displaying them in a pretty way. It is written in c to achieve much better
 performance, in return only Linux and Android are supported. It also uses
 mechanisms like multithreading and caching to finish as fast as possible.
- 
  
 %package bash-completion
 Summary: Bash completion files for %{name}
@@ -57,7 +56,6 @@ BuildArch: noarch
  
 %description bash-completion
 %{summary}
- 
  
 %prep
 %autosetup -p1
