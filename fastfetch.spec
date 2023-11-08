@@ -18,6 +18,8 @@ BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(ImageMagick)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(libglvnd)
+BuildRequires:  pkgconfig(libpulse)
+BuildRequires:  pkgconfig(libnm)
 BuildRequires:  pkgconfig(osmesa)
 # In contrib repo, so lets disable it for now
 #BuildRequires:  pkgconfig(libxfconf-0)
