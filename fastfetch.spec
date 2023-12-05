@@ -76,6 +76,7 @@ BuildArch: noarch
 %{_bindir}/%{name}
 %{_bindir}/flashfetch
 %{_datadir}/%{name}/
+%{_mandir}/man1/fastfetch.1.*
  
 %files bash-completion
 %{_datadir}/bash-completion/completions/%{name}
