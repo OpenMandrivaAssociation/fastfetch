@@ -1,6 +1,6 @@
 Name:           fastfetch
 Version:        2.3.1
-Release:        1
+Release:        2
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
 License:        MIT
@@ -17,6 +17,7 @@ BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(ImageMagick)
 BuildRequires:  pkgconfig(zlib)
+BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  pkgconfig(libpulse)
 BuildRequires:  pkgconfig(libnm)
@@ -29,7 +30,8 @@ BuildRequires:  pkgconfig(rpm)
 #BuildRequires:  pkgconfig(ddcutil)
 BuildRequires:  pkgconfig(vulkan)
 #BuildRequires:  pkgconfig(chafa)
- 
+
+Recommends:     %{_lib}drm2
 Recommends:     pciutils
 Recommends:     %{_lib}xcb1
 Recommends:     lib64xrandr2
