@@ -1,6 +1,6 @@
 Name:           fastfetch
-Version:        2.3.1
-Release:        2
+Version:        2.3.2
+Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
 License:        MIT
@@ -76,7 +76,7 @@ BuildArch: noarch
 %build
 %cmake
 %make_build
-install -Dm644 completions/fish %{buildroot}/usr/share/fish/completions/fastfetch.fish
+#install -Dm644 completions/fish %{buildroot}/usr/share/fish/completions/fastfetch.fish
 
 %install
 %make_install -C build
@@ -93,4 +93,4 @@ install -Dm644 completions/fish %{buildroot}/usr/share/fish/completions/fastfetc
 %{_datadir}/bash-completion/completions/%{name}
 
 %files fish-completion
-%{_datadir}/fish/completions/fastfetch.fish
+%{_datadir}/fish/vendor_completions.d/fastfetch.fish
