@@ -76,7 +76,6 @@ BuildArch: noarch
 %build
 %cmake
 %make_build
-install -Dm644 
 install -Dm644 completions/fish %{buildroot}/usr/share/fish/completions/fastfetch.fish
 
 %install
