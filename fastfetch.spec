@@ -57,17 +57,27 @@ Requires: bash-completion
 Requires: %{name} = %{version}-%{release}
 BuildArch: noarch
  
- 
 %description bash-completion
+%{summary}
+
+%package fish-completion
+Summary: Fish completion files for %{name}
+# as Fish is currently in contrib repository, let's make only soft dependency on it.
+Recommends: fish
+Requires: %{name} = %{version}-%{release}
+BuildArch: noarch
+ 
+%description fish-completion
 %{summary}
  
 %prep
 %autosetup -p1
- 
- 
+
 %build
 %cmake
 %make_build
+install -Dm644 
+install -Dm644 completions/fish %{buildroot}/usr/share/fish/completions/fastfetch.fish
 
 %install
 %make_install -C build
@@ -82,3 +92,6 @@ BuildArch: noarch
  
 %files bash-completion
 %{_datadir}/bash-completion/completions/%{name}
+
+%files fish-completion
+%{_datadir}/fish/completions/fastfetch.fish
