@@ -93,4 +93,4 @@ BuildArch: noarch
 %{_datadir}/bash-completion/completions/%{name}
 
 %files fish-completion
-%{_datadir}/fish/completions/fastfetch.fish
+#{_datadir}/fish/completions/fastfetch.fish
