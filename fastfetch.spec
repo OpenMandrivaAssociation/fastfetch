@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.8.10
+Version:        2.9.0
 Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
@@ -29,7 +29,7 @@ BuildRequires:  pkgconfig(ocl-icd)
 BuildRequires:  pkgconfig(rpm)
 #BuildRequires:  pkgconfig(ddcutil)
 BuildRequires:  pkgconfig(vulkan)
-#BuildRequires:  pkgconfig(chafa)
+BuildRequires:  pkgconfig(chafa)
 
 Recommends:     %{_lib}drm2
 Recommends:     pciutils
@@ -44,6 +44,7 @@ Recommends:     glib2
 Recommends:     lib64opencl1
 Recommends:     chafa
 Recommends:     ddcutil
+Recommends:     hwdata
  
 %description
 fastfetch is a neofetch-like tool for fetching system information and
