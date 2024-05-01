@@ -1,6 +1,6 @@
 Name:           fastfetch
 Version:        2.11.0
-Release:        1
+Release:        2
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
 License:        MIT
@@ -45,6 +45,8 @@ Recommends:     lib64opencl1
 Recommends:     chafa
 Recommends:     ddcutil
 Recommends:     hwdata
+# Neofetch is not in development anymore, no new commit from years and now archived repo. So lets replace it by fastfetch.
+Obsoletes:     neofetch
  
 %description
 fastfetch is a neofetch-like tool for fetching system information and
@@ -81,12 +83,15 @@ BuildArch: noarch
 
 %install
 %make_install -C build
+
+ln -s %{_bindir}/%{name} %{buildroot}%{_bindir}/neofetch
  
 %files
 %license LICENSE
 %doc README.md
 %{_bindir}/%{name}
 %{_bindir}/flashfetch
+%{_bindir}/neofetch
 %{_datadir}/%{name}/
 %{_mandir}/man1/fastfetch.1.*
  
