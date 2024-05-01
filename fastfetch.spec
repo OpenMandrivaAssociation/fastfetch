@@ -45,7 +45,7 @@ Recommends:     lib64opencl1
 Recommends:     chafa
 Recommends:     ddcutil
 Recommends:     hwdata
-
+# Neofetch is not in development anymore, no new commit from years and now archived repo. So lets replace it by fastfetch.
 Obsoletes:     neofetch
  
 %description
@@ -91,6 +91,7 @@ ln -s %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/neofetch
 %doc README.md
 %{_bindir}/%{name}
 %{_bindir}/flashfetch
+%{_bindir}/neofetch
 %{_datadir}/%{name}/
 %{_mandir}/man1/fastfetch.1.*
  
