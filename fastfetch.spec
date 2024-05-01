@@ -84,7 +84,7 @@ BuildArch: noarch
 %install
 %make_install -C build
 
-ln -s %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/neofetch
+ln -s %{buildroot}%{_bindir}/%{name} %{_bindir}/neofetch
  
 %files
 %license LICENSE
