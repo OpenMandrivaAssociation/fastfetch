@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.16.0
+Version:        2.17.1
 Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
