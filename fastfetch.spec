@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.21.0
+Version:        2.21.1
 Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
@@ -27,12 +27,13 @@ BuildRequires:  pkgconfig(osmesa)
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(ocl-icd)
 BuildRequires:  pkgconfig(rpm)
-#BuildRequires:  pkgconfig(ddcutil)
+BuildRequires:  pkgconfig(ddcutil)
 BuildRequires:  pkgconfig(vulkan)
 BuildRequires:  pkgconfig(chafa)
 BuildRequires:  pkgconfig(yyjson)
 
 Recommends:     %{_lib}drm2
+Recommends:     elfutils
 Recommends:     pciutils
 Recommends:     %{_lib}xcb1
 Recommends:     lib64xrandr2
