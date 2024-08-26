@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.21.3
+Version:        2.22.0
 Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
@@ -65,6 +65,15 @@ BuildArch: noarch
 %description bash-completion
 %{summary}
 
+%package zsh-completion
+Summary: Zsh completion files for %{name}
+Requires: zsh
+Requires: %{name} = %{version}-%{release}
+BuildArch: noarch
+ 
+%description zsh-completion
+%{summary}
+
 %package fish-completion
 Summary: Fish completion files for %{name}
 # as Fish is currently in contrib repository, let's make only soft dependency on it.
@@ -102,3 +111,6 @@ ln -s %{_bindir}/%{name} %{buildroot}%{_bindir}/neofetch
 
 %files fish-completion
 %{_datadir}/fish/vendor_completions.d/fastfetch.fish
+
+%files zsh-completion
+%{_datadir}/zsh/site-functions/_fastfetch
