@@ -106,7 +106,7 @@ BuildArch: noarch
 %doc README.md
 %{_bindir}/%{name}
 %{_bindir}/flashfetch
-%{_bindir}/neofetch
+#{_bindir}/neofetch
 %{_datadir}/%{name}/
 %{_mandir}/man1/fastfetch.1.*
  
