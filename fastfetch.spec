@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.38.0
+Version:        2.39.0
 Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
@@ -21,7 +21,6 @@ BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  pkgconfig(libpulse)
 BuildRequires:  pkgconfig(libnm)
-BuildRequires:  pkgconfig(osmesa)
 # In contrib repo, so lets disable it for now
 #BuildRequires:  pkgconfig(libxfconf-0)
 BuildRequires:  pkgconfig(glib-2.0)
@@ -48,10 +47,8 @@ Recommends:     chafa
 Recommends:     ddcutil
 Recommends:     hwdata
 
-# (ap) stop obsoleting neofetch - per user requests
-
 # Neofetch is not in development anymore, no new commit from years and now archived repo. So lets replace it by fastfetch.
-#Obsoletes:     neofetch
+Obsoletes:     neofetch
  
 %description
 fastfetch is a neofetch-like tool for fetching system information and
@@ -93,20 +90,19 @@ BuildArch: noarch
 %build
 %cmake
 %make_build
-#install -Dm644 completions/fish %{buildroot}/usr/share/fish/completions/fastfetch.fish
+install -Dm644 completions/fish %{buildroot}/usr/share/fish/completions/fastfetch.fish
 
 %install
 %make_install -C build
 
-# (ap) stop replacing neofetch (by user requests)
-#ln -s %{_bindir}/%{name} %{buildroot}%{_bindir}/neofetch
+ln -s %{_bindir}/%{name} %{buildroot}%{_bindir}/neofetch
  
 %files
 %license LICENSE
 %doc README.md
 %{_bindir}/%{name}
 %{_bindir}/flashfetch
-#{_bindir}/neofetch
+%{_bindir}/neofetch
 %{_datadir}/%{name}/
 %{_mandir}/man1/fastfetch.1.*
  
