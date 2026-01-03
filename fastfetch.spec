@@ -8,6 +8,7 @@ URL:            https://github.com/fastfetch-cli/fastfetch
 Source0:        https://github.com/fastfetch-cli/fastfetch/archive/%{version}/%{name}-%{version}.tar.gz
  
 BuildRequires:  cmake
+BuildRequires:  make
 BuildRequires:  pkgconfig(libpci)
 BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(xcb)
