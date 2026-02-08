@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.57.1
+Version:        2.58.0
 Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
@@ -25,7 +25,7 @@ BuildRequires:  pkgconfig(libnm)
 # In contrib repo, so lets disable it for now
 #BuildRequires:  pkgconfig(libxfconf-0)
 BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(ocl-icd)
+BuildRequires:  (pkgconfig(ocl-icd) or pkgconfig(OpenCL))
 BuildRequires:  pkgconfig(rpm)
 BuildRequires:  pkgconfig(ddcutil)
 BuildRequires:  pkgconfig(vulkan)
