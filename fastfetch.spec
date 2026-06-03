@@ -36,7 +36,7 @@ BuildRequires:  pkgconfig(chafa)
 BuildRequires:  pkgconfig(yyjson)
 
 # TODO
-BR: QuickJS-ng: https://github.com/quickjs-ng/quickjs
+# BR: QuickJS-ng: https://github.com/quickjs-ng/quickjs
 
 Recommends:     %{_lib}drm2
 Recommends:     elfutils
