@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.62.1
+Version:        2.64.0
 Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
@@ -22,15 +22,21 @@ BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libglvnd)
 BuildRequires:  pkgconfig(libpulse)
 BuildRequires:  pkgconfig(libnm)
+BuildRequires:	pkgconfig(libva)
+BuildRequires:	pkgconfig(lua)
 # In contrib repo, so lets disable it for now
 #BuildRequires:  pkgconfig(libxfconf-0)
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  (pkgconfig(ocl-icd) or pkgconfig(OpenCL))
 BuildRequires:  pkgconfig(rpm)
 BuildRequires:  pkgconfig(ddcutil)
+BuildRequires:	pkgconfig(vdpau)
 BuildRequires:  pkgconfig(vulkan)
 BuildRequires:  pkgconfig(chafa)
 BuildRequires:  pkgconfig(yyjson)
+
+# TODO
+BR: QuickJS-ng: https://github.com/quickjs-ng/quickjs
 
 Recommends:     %{_lib}drm2
 Recommends:     elfutils
@@ -89,7 +95,7 @@ BuildArch: noarch
 %autosetup -p1
 
 %build
-%cmake
+%cmake -DCMAKE_BUILD_TYPE=Release
 %make_build
 #install -Dm644 completions/fish %{buildroot}/usr/share/fish/completions/fastfetch.fish
 
