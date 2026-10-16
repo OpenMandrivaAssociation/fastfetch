@@ -1,6 +1,8 @@
 Name:           fastfetch
 Version:        2.70.0
 Release:        1
+# Out-of-tree cmake leaves debugsourcefiles.list empty.
+%undefine _debugsource_packages
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
 License:        MIT
