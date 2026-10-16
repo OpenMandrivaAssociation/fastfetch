@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.69.0
+Version:        2.70.0
 Release:        1
 Summary:        Like neofetch, but much faster because written in c
 Group:          Shells
@@ -20,7 +20,6 @@ BuildRequires:  pkgconfig(ImageMagick)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(libdrm)
 BuildRequires:  pkgconfig(libglvnd)
-BuildRequires:  pkgconfig(libpulse)
 BuildRequires:  pkgconfig(libnm)
 BuildRequires:	pkgconfig(libva)
 BuildRequires:	pkgconfig(lua)
@@ -29,14 +28,10 @@ BuildRequires:	pkgconfig(lua)
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  (pkgconfig(ocl-icd) or pkgconfig(OpenCL))
 BuildRequires:  pkgconfig(rpm)
-BuildRequires:  pkgconfig(ddcutil)
 BuildRequires:	pkgconfig(vdpau)
 BuildRequires:  pkgconfig(vulkan)
 BuildRequires:  pkgconfig(chafa)
 BuildRequires:  pkgconfig(yyjson)
-
-# TODO
-# BR: QuickJS-ng: https://github.com/quickjs-ng/quickjs
 
 Recommends:     %{_lib}drm2
 Recommends:     elfutils
@@ -51,7 +46,6 @@ Recommends:     imagemagick
 Recommends:     glib2
 Recommends:     lib64opencl1
 Recommends:     chafa
-Recommends:     ddcutil
 Recommends:     hwdata
 
 # Neofetch is not in development anymore, no new commit from years and now archived repo. So lets replace it by fastfetch.
