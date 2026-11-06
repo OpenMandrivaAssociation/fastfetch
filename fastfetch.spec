@@ -1,5 +1,5 @@
 Name:           fastfetch
-Version:        2.70.0
+Version:        2.71.0
 Release:        1
 # Out-of-tree cmake leaves debugsourcefiles.list empty.
 %undefine _debugsource_packages
